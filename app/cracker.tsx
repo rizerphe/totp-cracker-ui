@@ -8,6 +8,11 @@ import TotpQueuer from "./queuer";
 
 import init, * as wasm from "totp-cracker-wasm";
 
+if (typeof window !== "undefined") {
+    init().then(() => {
+        wasm.initThreadPool(navigator?.hardwareConcurrency);
+    });
+}
 const work_on = (job: Generation) => {
     const start_time = Date.now();
     const iterations = 5000;
@@ -41,12 +46,6 @@ const pick_job = (generations: Generation[]): Generation | undefined => {
 
 export default function TotpCracker() {
     const [generations, setGenerations] = useState<Generation[]>([]);
-
-    useEffect(() => {
-        init().then(() => {
-            wasm.initThreadPool(navigator?.hardwareConcurrency);
-        });
-    }, []);
 
     useEffect(() => {
         const job = pick_job(generations);
