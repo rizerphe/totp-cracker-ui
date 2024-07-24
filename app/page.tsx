@@ -1,3 +1,4 @@
+"use client";
 import TotpCracker from "./cracker";
 import Link from "next/link";
 
