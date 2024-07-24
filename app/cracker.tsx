@@ -8,7 +8,7 @@ import TotpQueuer from "./queuer";
 
 import init, * as wasm from "totp-cracker-wasm";
 init().then(() => {
-    wasm.initThreadPool(navigator.hardwareConcurrency);
+    wasm.initThreadPool(navigator?.hardwareConcurrency);
 });
 
 const work_on = (job: Generation) => {
@@ -17,7 +17,7 @@ const work_on = (job: Generation) => {
     const secret = wasm.try_find(
         BigInt(job.time),
         job.token,
-        navigator.hardwareConcurrency,
+        navigator?.hardwareConcurrency,
         job.attempts,
         iterations,
         job.job_id
@@ -25,7 +25,7 @@ const work_on = (job: Generation) => {
 
     const time_taken = Date.now() - start_time;
     const expected_time =
-        ((time_taken / iterations / navigator.hardwareConcurrency) *
+        ((time_taken / iterations / navigator?.hardwareConcurrency) *
             Math.pow(10, job.token.length)) /
         2 /
         1000;

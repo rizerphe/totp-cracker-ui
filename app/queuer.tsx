@@ -63,7 +63,7 @@ export default function TotpQueuer({ setGenerations }: TotpQueuerProps) {
             </div>
             <div className="flex flex-col gap-2 w-full">
                 <span className="text-gray-500 font-bold text-xs w-full">
-                    Using {navigator.hardwareConcurrency} threads
+                    Using {navigator?.hardwareConcurrency} threads
                 </span>
                 <div className="flex flex-row gap-4 w-full">
                     <Button
