@@ -32,16 +32,17 @@ export default function About() {
                 multi-threaded, it needed mere seconds to find a match.
             </p>
             <p className="leading-7 [&:not(:first-child)]:mt-6">
-                But hey, wouldn't it be cool if it was a website? And wouldn't
-                it be cool if it was all rust still? It's not even that I see a
-                clear advantage to using rust here, I just think it's cool. The
-                tricky part was multi-threading. Javascript by itself doesn't
-                support it at all. Neither does webassembly. There is one
-                solution: webworkers. That is, javascript instances running in
-                the background. After setting a few headers to enable browser
-                security features, it is even possible to create a shared memory
-                buffer, letting a few workers use this buffer as their shared
-                memory. Hey, we got multithreading now!
+                But hey, wouldn&apos;t it be cool if it was a website? And
+                wouldn&apos;t it be cool if it was all rust still? It&apos;s not
+                even that I see a clear advantage to using rust here, I just
+                think it&apos;s cool. The tricky part was multi-threading.
+                Javascript by itself doesn&apos;t support it at all. Neither
+                does webassembly. There is one solution: webworkers. That is,
+                javascript instances running in the background. After setting a
+                few headers to enable browser security features, it is even
+                possible to create a shared memory buffer, letting a few workers
+                use this buffer as their shared memory. Hey, we got
+                multithreading now!
             </p>
             <p className="leading-7 [&:not(:first-child)]:mt-6">
                 To be fair, I was very lazy about it all. Used{" "}
@@ -53,27 +54,28 @@ export default function About() {
                         <FaGithub /> wasm-bindgen-rayon
                     </Badge>
                 </a>{" "}
-                to handle all the threading setup for me. And I don't even do
-                any advanced inter-thread communication. I just let every thread
-                bruteforce 5k solutions, and if it doesn't work out, try again
-                in a bit (letting the rest of the javascript event loop run in
-                between these attempts cause a frozen browser isn't too
-                appealing).
+                to handle all the threading setup for me. And I don&apos;t even
+                do any advanced inter-thread communication. I just let every
+                thread bruteforce 5k solutions, and if it doesn&apos;t work out,
+                try again in a bit (letting the rest of the javascript event
+                loop run in between these attempts cause a frozen browser
+                isn&apos;t too appealing).
             </p>
             <p className="leading-7 [&:not(:first-child)]:mt-6">
-                This is just a cool proof of concept. I didn't handle the cases
-                where a browser might not support a feature at all. I wasn't at
-                all careful about how I initialize the wasm runtime etc; it
-                probably will break in a lot of environments. If the tool
-                doesn't work for you, this is probably why.
+                This is just a cool proof of concept. I didn&apos;t handle the
+                cases where a browser might not support a feature at all. I
+                wasn&apos;t at all careful about how I initialize the wasm
+                runtime etc; it probably will break in a lot of environments. If
+                the tool doesn&apos;t work for you, this is probably why.
             </p>
             <p className="leading-7 [&:not(:first-child)]:mt-6">
                 Another challenge was importing the TOTP secrets. Scanning codes
                 one by one gets annoying quickly. Luckily, google has developed
-                a protocol for migrating them. As far as I know, it's a fully
-                internal, undocumented standard. And, in my personal opinion, a
-                fairly stupid standard. However, people have reverse engineered
-                it. I was uh umm <i>heavily inspired (wink wink)</i> by{" "}
+                a protocol for migrating them. As far as I know, it&apos;s a
+                fully internal, undocumented standard. And, in my personal
+                opinion, a fairly stupid standard. However, people have reverse
+                engineered it. I was uh umm <i>heavily inspired (wink wink)</i>{" "}
+                by{" "}
                 <a href="https://github.com/qistoph/otp_export">
                     <Badge
                         variant="outline"
