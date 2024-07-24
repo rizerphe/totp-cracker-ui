@@ -69,7 +69,7 @@ export default function TimePicker({
 
     return (
         <div className="flex flex-col gap-2 w-full">
-            <div className="flex flex-row justify-between w-full items-stretch gap-8">
+            <div className="flex flex-col-reverse sm:flex-row justify-between w-full items-stretch gap-2 sm:gap-8">
                 <div className="flex flex-row items-stretch gap-4">
                     <Input
                         type="time"

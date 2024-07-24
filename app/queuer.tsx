@@ -58,7 +58,7 @@ export default function TotpQueuer({ setGenerations }: TotpQueuerProps) {
         <>
             <TokenInput token={token} setToken={setToken} />
             <TimePicker time={time} setTime={setTime} />
-            <div className="flex flex-row gap-4 w-full">
+            <div className="flex flex-col sm:flex-row gap-4 w-full">
                 <IssuerInput issuer={issuer} setIssuer={setIssuer} />
                 <AccountInput account={account} setAccount={setAccount} />
             </div>
