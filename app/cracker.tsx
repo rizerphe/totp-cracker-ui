@@ -7,12 +7,10 @@ import MigrationCode from "./migration";
 import TotpQueuer from "./queuer";
 
 import init, * as wasm from "totp-cracker-wasm";
+init().then(() => {
+    wasm.initThreadPool(navigator?.hardwareConcurrency);
+});
 
-if (typeof window !== "undefined") {
-    init().then(() => {
-        wasm.initThreadPool(navigator?.hardwareConcurrency);
-    });
-}
 const work_on = (job: Generation) => {
     const start_time = Date.now();
     const iterations = 5000;
