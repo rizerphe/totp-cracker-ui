@@ -19,7 +19,7 @@ export default function TimePicker({
     setTime: (time: number) => void;
 }) {
     const [datetime, setDatetime] = useState(
-        new Date(Date.now() - (Date.now() % 30_000))
+        new Date(Date.now() - (Date.now() % 30_000) + 60_000)
     );
 
     const update = () => {
